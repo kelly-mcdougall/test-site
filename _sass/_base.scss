@@ -6,6 +6,7 @@ body {
 
 body {
     @include serif-font;
+
 }
 
 hr {
@@ -65,6 +66,14 @@ aside {
 
 .no-padding {
     padding: 0;
+
+}
+
+.no-padding-figures{
+padding:0;
+width: 95%;
+text-align:center;
+margin:auto;
 }
 
 // Navigation
@@ -77,7 +86,7 @@ aside {
     .navbar-header .navbar-brand {
         color: $theme-primary;
         @include sans-serif-font;
-        font-weight: 700;
+        //font-weight: 700;
         text-transform: uppercase;
         &:hover,
         &:focus {
@@ -89,7 +98,7 @@ aside {
             > a,
             > a:focus {
                 text-transform: uppercase;
-                font-weight: 700;
+                //font-weight: 700;
                 font-size: 13px;
                 color: $theme-dark;
                 &:hover {
@@ -130,7 +139,7 @@ aside {
             border-color: rgba($theme-dark, .5);
             .navbar-header .navbar-brand {
                 color: $theme-primary;
-                font-size: 14px;
+                font-size: 13px;
                 &:hover,
                 &:focus {
                     color: darken($theme-primary, 10%);
@@ -149,7 +158,27 @@ aside {
 
 // Homepage Header
 
-header {
+.header-intro{
+background-image: url('../img/1.jpg');
+}
+
+.txt-box{
+column-count:1;
+-moz-column-count:1;
+-webkit-column-count: 1;
+padding: 3em;
+text-align: justify;
+clear:both;
+}
+
+.one-col{
+margin-left: 3em;
+padding:0;
+width:100%;
+text-align: center
+}
+
+header{
     position: relative;
     width: 100%;
     min-height: auto;
@@ -194,7 +223,7 @@ header {
                 margin-left: auto;
                 margin-right: auto;
                 p {
-                    font-size: 18px;
+                    font-size: 24px;
                     max-width: 80%;
                     margin-left: auto;
                     margin-right: auto;
@@ -203,6 +232,24 @@ header {
         }
     }
 }
+
+.header-content-short{
+min-height: 75%;
+}
+
+// Banner
+
+.banner-content {
+position: relative;
+width: 100%;
+min-height: auto;
+@include background-cover;
+background-position: center;
+background-image: url('../img/header.jpg');
+text-align: center;
+color: white;
+}
+
 
 // Sections
 
@@ -220,6 +267,73 @@ header {
         margin-bottom: 0;
     }
 }
+
+
+
+
+.roll-over {
+position: relative;
+display: block;
+width: 100%;
+text-align:center;
+
+
+.roll-over-box-caption {
+color: white;
+opacity: 0;
+display: block;
+background: rgba( $theme-primary-added, .9 );
+position: absolute;
+bottom: 0;
+text-align: center;
+width: 100%;
+height: 100%;
+@include transition-all;
+.roll-over-box-caption-content {
+width: 100%;
+text-align: center;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+.project-category,
+.project-name {
+@include sans-serif-font;
+padding: 0 15px;
+}
+.project-category {
+text-transform: uppercase;
+font-weight: 600;
+font-size: 14px;
+}
+.project-name {
+font-size: 18px;
+}
+}
+}
+&:hover {
+.roll-over-box-caption {
+opacity: 1;
+}
+}
+@media (min-width: 768px) {
+.portfolio-box-caption {
+.portfolio-box-caption-content {
+.project-category {
+font-size: 16px;
+}
+.project-name {
+font-size: 22px;
+}
+}
+}
+}
+}
+
+
+
+
+
+
 
 .portfolio-box {
     position: relative;
@@ -305,9 +419,9 @@ header {
 .btn {
     @include sans-serif-font;
     border: none;
-    border-radius: 300px;
-    font-weight: 700;
-    text-transform: uppercase;
+    //border-radius: 300px;
+    //font-weight: 700;
+    //text-transform: uppercase;
 }
 
 .btn-xl {
@@ -347,4 +461,7 @@ img::-moz-selection {
 body {
     -webkit-tap-highlight-color: $theme-dark;
 }
+
+
+
 
